@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>Authorization page</title>
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- <link rel="stylesheet" type="text/css"
+          href="https://bootswatch.com/4/cerulean/bootstrap.min.css" />
+      -->
+</head>
+
+<body>
+<div class="main">
+  <h2>Welcome to authorization page...</h2>
+    <div class="table">
+      <form action="#" th:action="@{}" th:object="${}" method="post">
+        <label for="email">Enter your email:</label><br>
+        <input type="email" id="email" name="userEmail" th:value="${userEmail}"><br>
+        <label for="pass">Enter your password:</label><br>
+        <input type="password" id="pass" name="userPass" th:value="${userPass}"><br>
+        <input type="submit" name="submit">
+    </form>
+    </div>
+</div>
+</body>
+</html>
