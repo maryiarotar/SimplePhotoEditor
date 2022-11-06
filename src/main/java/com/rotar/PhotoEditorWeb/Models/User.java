@@ -1,10 +1,8 @@
 package com.rotar.PhotoEditorWeb.Models;
 
-import lombok.Data;
+
 import lombok.Getter;
 import lombok.Setter;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -16,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "user")
 public class User {
 
+    @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
