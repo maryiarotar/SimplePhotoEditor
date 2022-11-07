@@ -8,7 +8,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="photo_album")
-public class PhotoAlbum {
+public class PhotoAlbumEntity {
 
     @Getter
     @Id
@@ -27,5 +27,9 @@ public class PhotoAlbum {
     @Lob
     @Column(name = "photo")
     private byte photo;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private UserEntity user;
 
 }

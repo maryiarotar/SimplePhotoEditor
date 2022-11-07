@@ -1,7 +1,9 @@
 package com.rotar.PhotoEditorWeb.Repository;
 
-import com.rotar.PhotoEditorWeb.Models.PhotoAlbum;
+import com.rotar.PhotoEditorWeb.Models.PhotoAlbumEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PhotoAlbumRepository extends JpaRepository<PhotoAlbum, Long> {
+@Repository
+public interface PhotoAlbumRepository extends JpaRepository<PhotoAlbumEntity, Long> {
 }
