@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Result</h1>
+<p th:text="'name: ' + ${user.userName}" />
+<p th:text="'pass: ' + ${user.pass}" />
+<p th:text="'email: ' + ${user.email}" />
+
+<p th:text="${message}" />
+
+<a href="home" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;HOME >>>>> </a>
+
+</body>
+</html>
