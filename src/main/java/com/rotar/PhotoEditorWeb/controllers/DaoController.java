@@ -1,12 +1,14 @@
 package com.rotar.PhotoEditorWeb.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/authorization")
+@RequestMapping("/noway")
 public class DaoController {
 
+    @GetMapping("auth")
     public String returnAuthorize(){
         return "authorization";
     }

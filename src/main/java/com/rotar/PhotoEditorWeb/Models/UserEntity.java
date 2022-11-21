@@ -1,36 +1,115 @@
 package com.rotar.PhotoEditorWeb.Models;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import java.util.List;
+import java.util.*;
 
 @Getter
 @Setter
 @Entity
-@Table(name = "user")
-public class UserEntity {
+@Table(name = "t_user")
+@NoArgsConstructor
+public class UserEntity  implements UserDetails  {
+
+    public UserEntity(Long id, String name, String email, String pass){
+        this.userId = id;
+        this.userName = name;
+        this.pass = pass;
+        this.email = email;
+        this.photos = null;
+        isAccountNonExpired = true;
+        isAccountNonLocked = true;
+        isCredentialsNonExpired = true;
+        isEnabled = true;
+    }
+
+    public UserEntity(Long id, String name, String email, String pass,
+                      boolean isEx, boolean nLck, boolean cnE, boolean en
+                      ){
+        this.userId = id;
+        this.userName = name;
+        this.pass = pass;
+        this.email = email;
+        this.photos = null;
+        this.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
+        isAccountNonExpired = isEx;
+        isAccountNonLocked = nLck;
+        isCredentialsNonExpired = cnE;
+        isEnabled = en;
+    }
+
 
     @Getter
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long userId;
+    @Column(name="user_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //при остальных стратегиях надо уточнять sequence tables
+    private Long userId;
 
     @Column(name = "user_name")
-    @NotBlank(message = "Enter name!")
+    @NonNull//ЗДЕСЬ НЕ НУЖНЫ
     private String userName;
 
+    @NonNull
     @Column(name = "email")
     @Email
     private String email;
 
-    @Column(name = "password")
-    @NotBlank(message = "Enter password!")
+    @Column(name = "pass")
+    @NonNull
     private String pass;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    private List<PhotoAlbumEntity> photos;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "t_user")
+    private List<PhotoAlbumEntity> photos; //Сюда СКОРЕЕ ПООМЕСТИТЬ ТОЛЬКО IDшки фоток
+
+    @ManyToMany(fetch = FetchType.EAGER)
+   private Set<Role> roles;
+
+    @Column
+    boolean isAccountNonExpired;
+    boolean isAccountNonLocked;
+    boolean isCredentialsNonExpired;
+    boolean isEnabled;
+
+
+    //---------------------------METHODS--------------------------//
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return getRoles();
+    }
+
+    @Override
+    public String getPassword() {
+        return pass;
+    }
+
+    @Override
+    public String getUsername() {
+        return userName;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return isAccountNonExpired;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return isAccountNonLocked;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return isCredentialsNonExpired;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return isEnabled;
+    }
 }

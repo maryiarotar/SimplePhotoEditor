@@ -10,6 +10,11 @@ import javax.persistence.*;
 @Table(name="photo_album")
 public class PhotoAlbumEntity {
 
+    //ЭТО ДБ ТАБЛ many to one - много фото один юзер
+    // ЛИБО СДЕЛАТЬ ОДЕЛЬГУЮ ТАБЛ С ФОТАМИ, А ЭТА ПОСЕРЕДИНЕ ЧТОБЫ ОТ ЮЗЕРОВ ТОЖЕ ВИДНЫ БЫЛИ ФОТКИ
+
+
+
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,7 +34,7 @@ public class PhotoAlbumEntity {
     private byte photo;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private UserEntity user;
+    @JoinColumn(name = "photos")
+    private UserEntity t_user;
 
 }

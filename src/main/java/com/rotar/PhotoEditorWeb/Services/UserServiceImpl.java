@@ -1,28 +1,57 @@
 package com.rotar.PhotoEditorWeb.Services;
 
-import com.rotar.PhotoEditorWeb.Models.Dto.PhotoAlbumDto;
 import com.rotar.PhotoEditorWeb.Models.Dto.UserDto;
+import com.rotar.PhotoEditorWeb.Models.Role;
 import com.rotar.PhotoEditorWeb.Models.UserEntity;
-import com.rotar.PhotoEditorWeb.Repository.PhotoAlbumRepository;
+import com.rotar.PhotoEditorWeb.Repository.RoleRepository;
 import com.rotar.PhotoEditorWeb.Repository.UserRepository;
-import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.util.*;
 
-@Data
-@Service
+@Service("UserServiceImpl")
 public class UserServiceImpl implements UserService{
 
+    @Autowired
+    RoleRepository roleRepository;
+/*    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;*/
+    @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    public UserServiceImpl(UserRepository userRepository){
+        this.userRepository = userRepository;
+    }
+
+
     @Override
-    public void add(UserDto userDto) {
+    public void addUser(UserDto userDto, boolean nExp,boolean nLck, boolean crdts, boolean en) {
         UserEntity userEntity = new UserEntity();
         userEntity.setUserName(userDto.getUserName());
         userEntity.setEmail(userDto.getEmail());
-        userEntity.setPass(userDto.getPass());
+        // userEntity.setPass(bCryptPasswordEncoder.encode(userDto.getPass()));
+        userEntity.setPass(userDto.getPass()); //ЗАКОДИРОВАТЬ!!!!!!!!!!
+        userEntity.setPhotos(null); //??????????????
+        userEntity.setAccountNonExpired(nExp);
+        userEntity.setAccountNonLocked(nLck);
+        userEntity.setCredentialsNonExpired(crdts);
+        userEntity.setEnabled(en);
+        Set<Role> roles = new HashSet<>();
+        roles.add(roleRepository.getReferenceById(1l));
+        userEntity.setRoles(roles);
+        //userEntity.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
+
         userRepository.save(userEntity);
     }
 
@@ -33,8 +62,7 @@ public class UserServiceImpl implements UserService{
         if (limit != null) {
             for (int i = 0; i < limit; i++) {
                 UserDto userDto = new UserDto();
-                userDto.setUserId(userEntities.get(i).getUserId());
-                userDto.setUserName(userEntities.get(i).getUserName());
+                userDto.setUserName(userEntities.get(i).getUsername());
                 userDto.setEmail(userEntities.get(i).getEmail());
                 userDto.setPass(userEntities.get(i).getPass());
                 userDtoList.add(userDto);
@@ -45,26 +73,57 @@ public class UserServiceImpl implements UserService{
         } else {
             for (UserEntity user : userEntities){
                 UserDto userDto = new UserDto();
-                userDto.setUserId(user.getUserId());
-                userDto.setUserName(user.getUserName());
+                userDto.setUserName(user.getUsername());
                 userDto.setEmail(user.getEmail());
                 userDto.setPass(user.getPass());
                 userDtoList.add(userDto);
             }
         }
-        return null;
+        return userDtoList;
     }
+
+
+    @Override //ДОПИСАТЬ В РЕПОЗИОРИИ ТЕЛО???
+    public Optional<UserDto> getByEmail(String email) {
+        Optional<UserEntity> optionalUser = userRepository.findByEmail(email);
+        if (optionalUser.isPresent()){
+            UserDto userDto = new UserDto();
+            userDto.setUserName(optionalUser.get().getUsername());
+            userDto.setEmail(optionalUser.get().getEmail());
+            userDto.setPass(optionalUser.get().getPass());
+            return Optional.of(userDto);
+        }
+        return Optional.empty();
+    }
+
 
     @Override
-    public UserDto getById(Long id) {
-
-        return null;
+    public boolean deleteUser(String email) {
+        Optional<UserEntity> user = userRepository.findByEmail(email);
+        if (user.isPresent()) {
+            Long id = user.get().getUserId();
+            userRepository.deleteById(id);
+            return true;
+        }
+        return false;
     }
+
 
     @Override
-    public void delete(Long id) {
-        userRepository.deleteById(id);
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
+        UserEntity user = userRepository.findByUsername(name);
+        Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+
+        if (user == null){
+            throw new UsernameNotFoundException("User <" + name + "> not found");
+        }
+
+        for (Role role : user.getRoles()){
+            grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
+
+        }
+
+        return new User(user.getUsername(), user.getPassword(), grantedAuthorities);
     }
-
-
 }

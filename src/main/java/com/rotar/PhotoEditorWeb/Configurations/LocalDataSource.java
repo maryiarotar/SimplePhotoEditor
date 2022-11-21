@@ -9,10 +9,10 @@ import javax.sql.DataSource;
 @Component
 public class LocalDataSource {
 
-    private final String URL = "jdbc:postgresql://localhost:5432/user_db";
-    private final String USER = "postgres";
+    private final String URL = "jdbc:postgresql://localhost:5432/photoApp";
+    private final String USER = "root";
     private final String DRIVER = "org.postgresql.Driver";
-    private final String PASSWORD = "postgres";
+    private final String PASSWORD = "mary1995";
 
     @Bean
     public DataSource getSingletonDatasource() {
@@ -21,6 +21,8 @@ public class LocalDataSource {
         driverManagerDataSource.setUsername(USER);
         driverManagerDataSource.setPassword(PASSWORD);
         driverManagerDataSource.setDriverClassName(DRIVER);
+        //driverManagerDataSource.
+        System.out.println("-----CONNECTION SUCCESSFUL!----");
         return driverManagerDataSource;
     }
 }
