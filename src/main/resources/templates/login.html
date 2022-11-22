@@ -20,6 +20,12 @@
     <div class="table">
         <form action="#" th:action="@{/login-done}" th:object="${signUser}" method="post">
 
+
+            <div th:if="${param.error}">
+                Invalid username and password.</div>
+            <div th:if="${param.logout}">
+                You have been logged out.</div>
+
             <input type="hidden" th:field="*{userName}" value="noname"
                                                   id="name"
                                                   placeholder="Name"/>

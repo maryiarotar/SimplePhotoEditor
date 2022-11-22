@@ -67,8 +67,14 @@ public class UserEntity  implements UserDetails  {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "t_user")
     private List<PhotoAlbumEntity> photos; //Сюда СКОРЕЕ ПООМЕСТИТЬ ТОЛЬКО IDшки фоток
 
+
+
     @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "role", joinColumns = @JoinColumn(name="user_id"),
+                inverseJoinColumns = @JoinColumn(name="role_id"))
    private Set<Role> roles;
+
+
 
     @Column
     boolean isAccountNonExpired;

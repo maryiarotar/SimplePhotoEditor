@@ -4,6 +4,7 @@ import com.rotar.PhotoEditorWeb.Models.Dto.UserDto;
 import com.rotar.PhotoEditorWeb.Services.SecurityService;
 import com.rotar.PhotoEditorWeb.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,15 +17,16 @@ import java.util.Optional;
 @RequestMapping("/")
 public class HomeController {
 
-    private final SecurityService securityService;
-    private final UserService userService;
+
+
     @Autowired
-    HomeController(SecurityService securityService, UserService userService){
-        this.securityService = securityService;
-        this.userService = userService;
-    }
+    private SecurityService securityService;
 
+    @Autowired
+    private UserService userService;
 
+@Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @GetMapping("home")
     public String goHome2() {
@@ -78,6 +80,16 @@ public class HomeController {
         return "login";
     }
 
+    @GetMapping("welcome")
+    public String welcome(Model model){
+        String us = securityService.findLoggedInUsername();
+        System.out.println("name is ----------> " + us);
+        model.addAttribute("signUser", us);
+
+        return "welcome";
+    }
+
+
     @PostMapping("login-done")
     public String loginDone(@Valid UserDto signUser,
                         BindingResult result, Model model){
@@ -86,25 +98,22 @@ public class HomeController {
         }
         Optional<UserDto> isExist = userService.getByEmail(signUser.getEmail());
         if (isExist.isPresent()){
-            String thisPass = isExist.get().getPass(); //РАСКОДИРОВАТЬ
-            System.out.println("------ PASSWORD1------" + isExist.get().getPass());
-            System.out.println("------ PASSWORD2------" + signUser.getPass());
-            if (thisPass.matches(signUser.getPass())){
+            String thisPass = isExist.get().getPass();
+            if (bCryptPasswordEncoder.matches(signUser.getPass(), thisPass)){
+                System.out.println("------ PASSWORD IS TRUE...------");
                 model.addAttribute("signUser", isExist.get());
-                securityService.autoLogin(isExist.get().getUserName(), isExist.get().getPass());
+                securityService.autoLogin(isExist.get().getUserName(), thisPass);
                 System.out.println("-------USER IS LOGGENED----------");
+                return "welcome";
             } else {
                 System.out.println("PASSWORD NOT VALID!");
                 model.addAttribute("message", "PASSWORD NOT VALID!");
                 return login(model);
             }
-
         }
-
         return "welcome";
 
     }
-
 
 
 }

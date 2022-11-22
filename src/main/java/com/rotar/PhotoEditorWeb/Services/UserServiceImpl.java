@@ -24,8 +24,10 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     RoleRepository roleRepository;
-/*    @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;*/
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     @Autowired
     private UserRepository userRepository;
 
@@ -41,7 +43,7 @@ public class UserServiceImpl implements UserService{
         userEntity.setUserName(userDto.getUserName());
         userEntity.setEmail(userDto.getEmail());
         // userEntity.setPass(bCryptPasswordEncoder.encode(userDto.getPass()));
-        userEntity.setPass(userDto.getPass()); //ЗАКОДИРОВАТЬ!!!!!!!!!!
+        userEntity.setPass(bCryptPasswordEncoder.encode(userDto.getPass()));
         userEntity.setPhotos(null); //??????????????
         userEntity.setAccountNonExpired(nExp);
         userEntity.setAccountNonLocked(nLck);
@@ -50,9 +52,9 @@ public class UserServiceImpl implements UserService{
         Set<Role> roles = new HashSet<>();
         roles.add(roleRepository.getReferenceById(2l));
         userEntity.setRoles(roles);
-        //userEntity.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
-
+        //userEntity.setRoles(Collections.singleton(new Role(1L, "ROLE_ADMIN")));
         userRepository.save(userEntity);
+
     }
 
     @Override
@@ -113,11 +115,14 @@ public class UserServiceImpl implements UserService{
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
         UserEntity user = userRepository.findByUsername(name);
+
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
         if (user == null){
             throw new UsernameNotFoundException("User <" + name + "> not found");
         }
+
+        user = userRepository.getReferenceById(user.getUserId());
 
         for (Role role : user.getRoles()){
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
