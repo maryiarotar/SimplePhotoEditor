@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService{
         userEntity.setCredentialsNonExpired(crdts);
         userEntity.setEnabled(en);
         Set<Role> roles = new HashSet<>();
-        roles.add(roleRepository.getReferenceById(1l));
+        roles.add(roleRepository.getReferenceById(2l));
         userEntity.setRoles(roles);
         //userEntity.setRoles(Collections.singleton(new Role(1L, "ROLE_USER")));
 

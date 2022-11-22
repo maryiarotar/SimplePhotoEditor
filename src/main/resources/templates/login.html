@@ -14,18 +14,30 @@
 
 <body>
 <div class="main">
-    <h2>Welcome to registration page...</h2>
+    <h2>...you will login with that form...</h2>
+    <td th:text="${message}"></td>
     <h1>Please, enter your details:</h1>
     <div class="table">
-        <form action="#" th:action="@{/login}" method="post">
+        <form action="#" th:action="@{/login-done}" th:object="${signUser}" method="post">
 
-            <label for="email">Enter your email:</label><br>
-            <input type="email" th:field="{email}" id="email"><br>
+            <input type="hidden" th:field="*{userName}" value="noname"
+                                                  id="name"
+                                                  placeholder="Name"/>
+            <br><br>
+            <label for="email">Email</label> <input type="text" th:field="*{email}"
+                                                    id="email"
+                                                    placeholder="Email"/>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-danger"></span>
+            <br><br>
+            <label for="pass">Password</label> <input type="text" th:field="*{pass}"
+                                                      id="pass"
+                                                      placeholder="Password"/>
+            <span th:if="${#fields.hasErrors('pass')}" th:errors="*{pass}" class="text-danger"></span>
+            <br><br>
 
-            <label for="pass">Enter your password:</label><br>
-            <input type="password" th:field="{password}" id="pass"><br>
 
-            <input type="submit" name="submit">
+            <button>Submit >></button>
+
         </form>
     </div>
 </div>

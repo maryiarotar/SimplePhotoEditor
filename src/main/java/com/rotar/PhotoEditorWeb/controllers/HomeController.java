@@ -78,24 +78,30 @@ public class HomeController {
         return "login";
     }
 
-    @PostMapping("login")
-    public String login(@RequestParam("email") String email,
-                        @RequestParam("pass") String pass,
+    @PostMapping("login-done")
+    public String loginDone(@Valid UserDto signUser,
                         BindingResult result, Model model){
         if (result.hasErrors()) {
             return "login";
         }
-        Optional<UserDto> isExist = userService.getByEmail(email);
+        Optional<UserDto> isExist = userService.getByEmail(signUser.getEmail());
         if (isExist.isPresent()){
             String thisPass = isExist.get().getPass(); //РАСКОДИРОВАТЬ
-            if (thisPass.matches(pass)){
+            System.out.println("------ PASSWORD1------" + isExist.get().getPass());
+            System.out.println("------ PASSWORD2------" + signUser.getPass());
+            if (thisPass.matches(signUser.getPass())){
+                model.addAttribute("signUser", isExist.get());
                 securityService.autoLogin(isExist.get().getUserName(), isExist.get().getPass());
+                System.out.println("-------USER IS LOGGENED----------");
             } else {
                 System.out.println("PASSWORD NOT VALID!");
+                model.addAttribute("message", "PASSWORD NOT VALID!");
+                return login(model);
             }
 
         }
-        return "redirect:/welcome";
+
+        return "welcome";
 
     }
 

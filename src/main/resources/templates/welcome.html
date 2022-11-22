@@ -3,11 +3,16 @@
 <head>
     <title>Welcome</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 </head>
 <body>
 <h1>WELCOME, </h1>
 <p th:text="${signUser.userName}" />
 <p>, HAVE A GOOD DAY!</p>
+<br><br><br>
+<a href="login" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To log out</a>
+<a href="admin/show-users" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To show users</a>
 
 </body>
 </html>

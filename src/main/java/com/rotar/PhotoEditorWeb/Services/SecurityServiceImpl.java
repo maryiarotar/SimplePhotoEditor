@@ -32,6 +32,8 @@ public class SecurityServiceImpl implements SecurityService {
 
         UserDetails userDetails = userService.loadUserByUsername(username);
 
+
+
         UsernamePasswordAuthenticationToken authenticationToken =
                 new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());
 
