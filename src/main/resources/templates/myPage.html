@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+    <style>
+   .picture {
+   float: left;
+    border: 1px solid; /* Параметры рамки */
+    padding: 10px; /* Поля внутри блока */
+    margin: 10px; /* Отступы вокруг */
+    background: #f0f0f0; /* Цвет фона */
+   }
+   .picture figcaption {
+    margin: 20px; /* Отступы вокруг абзаца */
+   }
+   .round {
+    border-radius: 100px; /* Радиус скругления */
+    border: 3px solid blue; /* Параметры рамки */
+    box-shadow: 0 0 7px #666; /* Параметры тени */
+   }
+  </style>
+
+</head>
+<body>
+
+
+
+<div class="container my-2">
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <table class="table table-striped table-responsive-md">
+               <tr>
+                   <td>
+                       name:<br>
+                       <h3 align="center"><p th:text="${helloUser}" /></h3>
+                   </td>
+                   <td>
+                       avatar:<br>
+                       <img th:src="@{/album/{id}(id=${id})}" height="90px" class="round">
+                   </td>
+               </tr>
+<br><br>
+<tr>
+    <td>
+<form action="#" th:action="@{/mypage/download}" method="post" enctype="multipart/form-data">
+    <br>
+    <label for="file">Добавить фото в альбом</label> <input type="file" name="file" id="file"/>
+    <br><br><br>
+    <input type="submit" value="Добавить"/>
+</form>
+    </td>
+    <td>
+<form action="#" th:action="@{/mypage/download-avatar}" method="post" enctype="multipart/form-data">
+    <br>
+    <label for="avatar">Сменить аватар:</label> <input type="file" name="file" id="avatar"/>
+    <br><br><br>
+    <input type="submit" value="Добавить"/>
+</form>
+    </td>
+</table>
+       <div th:switch="${photos}" class="container my-5">
+           <table>
+                    <tr th:each="photo : ${photos}">
+                        <figure class="picture">
+                            <img th:src="@{/album/display/{photoId}(photoId=${photo.id})}" height="200px"
+                                 alt="No image" style="margin: 10px;">
+                            <figcaption>
+                                <form action="#" th:action="@{/mypage/delete/{photoId}(photoId=${photo.id})}" method="post">
+                                <button type="submit">Delete</button>
+                                 </form>
+                            </figcaption>
+                        </figure>
+                    </tr>
+           </table>
+            </div>
+
+
+<table>
+<tr>
+    <td>
+        <a href="/logout" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To log out</a>
+        <a href="/welcome" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;Return</a>
+    </td>
+</tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

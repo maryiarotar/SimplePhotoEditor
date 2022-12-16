@@ -1,0 +1,221 @@
+[ INFO] 2022-11-28 15:12:55,018 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 6760 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 15:12:55,034 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 15:13:03,592 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.255 seconds (JVM running for 10.545)
+[ INFO] 2022-11-28 15:13:23,604 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] Was got empty user by email=qwerty@qwerty.com
+[ INFO] 2022-11-28 15:13:23,852 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] User com.rotar.PhotoEditorWeb.Models.UserEntity@184b5853 was saved.
+[ INFO] 2022-11-28 15:13:23,852 c.r.P.controllers.HomeController [http-nio-8080-exec-2] User with email=qwerty@qwerty.com was registrated
+[ INFO] 2022-11-28 15:29:36,504 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 3128 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 15:29:36,504 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 15:29:45,051 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.111 seconds (JVM running for 11.437)
+[ INFO] 2022-11-28 19:00:41,893 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 8212 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:00:41,901 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:00:50,468 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.195 seconds (JVM running for 11.569)
+[ INFO] 2022-11-28 19:04:23,376 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 3904 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:04:23,378 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:04:31,818 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.059 seconds (JVM running for 11.497)
+[ INFO] 2022-11-28 19:08:31,808 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 5732 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:08:31,810 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:08:40,636 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.501 seconds (JVM running for 12.14)
+[ INFO] 2022-11-28 19:10:32,130 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 2420 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:10:32,132 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:10:40,516 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 8.991 seconds (JVM running for 11.716)
+[ INFO] 2022-11-28 19:12:49,390 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 7464 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:12:49,392 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:12:57,793 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.067 seconds (JVM running for 11.368)
+[ INFO] 2022-11-28 19:24:24,794 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 8648 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:24:24,794 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:24:33,467 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.464 seconds (JVM running for 12.147)
+[ INFO] 2022-11-28 19:24:33,842 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 19:24:33,936 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@1ead3c67 loaded
+[ INFO] 2022-11-28 19:25:17,516 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 9052 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:25:17,516 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:25:26,579 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.777 seconds (JVM running for 12.141)
+[ INFO] 2022-11-28 19:25:27,048 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 19:25:27,157 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@1ead3c67 loaded
+[ INFO] 2022-11-28 19:30:37,624 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 1204 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:30:37,624 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:30:46,124 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.098 seconds (JVM running for 11.472)
+[ INFO] 2022-11-28 19:31:35,918 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 5196 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:31:35,933 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:31:44,679 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.367 seconds (JVM running for 11.732)
+[ INFO] 2022-11-28 19:39:33,720 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 6308 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:39:33,720 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:39:42,130 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.051 seconds (JVM running for 11.427)
+[ INFO] 2022-11-28 19:45:02,320 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 2348 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:45:02,336 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:45:10,950 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.269 seconds (JVM running for 11.653)
+[ INFO] 2022-11-28 19:46:05,365 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 8188 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 19:46:05,365 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 19:46:14,199 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.578 seconds (JVM running for 12.232)
+[ INFO] 2022-11-28 20:04:22,831 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 188 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:04:22,831 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:04:31,084 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 8.858 seconds (JVM running for 11.172)
+[ INFO] 2022-11-28 20:04:31,413 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:11:44,010 c.r.P.PhotoEditorWebApplicationTests [main] Starting PhotoEditorWebApplicationTests using Java 1.8.0_341 on Maryia with PID 7648 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:11:44,012 c.r.P.PhotoEditorWebApplicationTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:11:53,049 c.r.P.PhotoEditorWebApplicationTests [main] Started PhotoEditorWebApplicationTests in 9.661 seconds (JVM running for 12.287)
+[ INFO] 2022-11-28 20:11:53,537 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:11:53,650 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@6516181f loaded
+[ INFO] 2022-11-28 20:18:42,011 c.r.PhotoEditorWeb.AuthorizedTests [main] Starting AuthorizedTests using Java 1.8.0_341 on Maryia with PID 7940 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:18:42,013 c.r.PhotoEditorWeb.AuthorizedTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:18:52,306 c.r.PhotoEditorWeb.AuthorizedTests [main] Started AuthorizedTests in 10.932 seconds (JVM running for 13.919)
+[ INFO] 2022-11-28 20:18:52,491 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:18:52,631 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@77f529a6 loaded
+[ INFO] 2022-11-28 20:20:00,415 c.r.PhotoEditorWeb.AuthorizedTests [main] Starting AuthorizedTests using Java 1.8.0_341 on Maryia with PID 6532 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:20:00,417 c.r.PhotoEditorWeb.AuthorizedTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:20:09,852 c.r.PhotoEditorWeb.AuthorizedTests [main] Started AuthorizedTests in 10.082 seconds (JVM running for 13.288)
+[ INFO] 2022-11-28 20:20:10,005 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:20:10,157 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@3700994c loaded
+[ INFO] 2022-11-28 20:22:53,699 c.r.PhotoEditorWeb.AuthorizedTests [main] Starting AuthorizedTests using Java 1.8.0_341 on Maryia with PID 6948 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:22:53,702 c.r.PhotoEditorWeb.AuthorizedTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:23:04,452 c.r.PhotoEditorWeb.AuthorizedTests [main] Started AuthorizedTests in 11.375 seconds (JVM running for 14.457)
+[ INFO] 2022-11-28 20:23:04,677 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:23:04,775 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@4eb48298 loaded
+[ INFO] 2022-11-28 20:23:23,670 c.r.PhotoEditorWeb.AuthorizedTests [main] Starting AuthorizedTests using Java 1.8.0_341 on Maryia with PID 8176 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:23:23,672 c.r.PhotoEditorWeb.AuthorizedTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:23:34,269 c.r.PhotoEditorWeb.AuthorizedTests [main] Started AuthorizedTests in 11.257 seconds (JVM running for 14.117)
+[ INFO] 2022-11-28 20:23:34,438 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:23:34,577 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@1c79d093 loaded
+[ INFO] 2022-11-28 20:23:34,910 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:23:34,919 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@75c8d8e7 loaded
+[ INFO] 2022-11-28 20:26:10,387 c.r.PhotoEditorWeb.AuthorizedTests [main] Starting AuthorizedTests using Java 1.8.0_341 on Maryia with PID 9136 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-28 20:26:10,389 c.r.PhotoEditorWeb.AuthorizedTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-28 20:26:19,636 c.r.PhotoEditorWeb.AuthorizedTests [main] Started AuthorizedTests in 9.93 seconds (JVM running for 12.286)
+[ INFO] 2022-11-28 20:26:19,821 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-28 20:26:19,952 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@33f81280 loaded
+[ INFO] 2022-11-28 20:26:20,164 c.r.P.Services.SecurityServiceImpl [main] Finding the name of this authorized used...
+[ INFO] 2022-11-28 20:26:20,165 c.r.P.Services.SecurityServiceImpl [main] Userdetails =null. Name is =Petr Petrov. Principal = org.springframework.security.core.userdetails.User [Username=Petr Petrov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:13:42,952 c.r.PhotoEditorWeb.AuthorizedTests [main] Starting AuthorizedTests using Java 1.8.0_341 on Maryia with PID 6936 (started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:13:42,952 c.r.PhotoEditorWeb.AuthorizedTests [main] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:13:52,608 c.r.PhotoEditorWeb.AuthorizedTests [main] Started AuthorizedTests in 10.377 seconds (JVM running for 13.141)
+[ INFO] 2022-11-29 17:13:52,749 c.r.P.Services.UserServiceImpl [main] Loadind user by username...
+[ INFO] 2022-11-29 17:13:52,885 c.r.P.Services.UserServiceImpl [main] User com.rotar.PhotoEditorWeb.Models.UserEntity@54caeadc loaded
+[ INFO] 2022-11-29 17:13:53,127 c.r.P.Services.SecurityServiceImpl [main] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:13:53,127 c.r.P.Services.SecurityServiceImpl [main] Userdetails =null. Name is =Petr Petrov. Principal = org.springframework.security.core.userdetails.User [Username=Petr Petrov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:14:13,483 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 1400 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:14:13,483 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:14:22,018 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.242 seconds (JVM running for 10.63)
+[ INFO] 2022-11-29 17:24:44,934 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 5264 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:24:44,934 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:24:53,479 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.38 seconds (JVM running for 10.932)
+[ INFO] 2022-11-29 17:25:27,265 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] Was got empty user by email=wqewq@ya.ru
+[ INFO] 2022-11-29 17:25:27,529 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] User com.rotar.PhotoEditorWeb.Models.UserEntity@34e5168f was saved.
+[ INFO] 2022-11-29 17:25:27,529 c.r.P.controllers.HomeController [http-nio-8080-exec-10] User with email=wqewq@ya.ru was registrated
+[ INFO] 2022-11-29 17:25:41,400 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-8] Loadind user by username...
+[ INFO] 2022-11-29 17:25:41,432 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-8] User com.rotar.PhotoEditorWeb.Models.UserEntity@6a7c1886 loaded
+[ INFO] 2022-11-29 17:25:41,560 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-10] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:25:41,560 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-10] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:25:45,684 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:25:45,684 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:25:47,724 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-3] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:25:47,724 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-3] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:25:57,722 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-5] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:25:57,722 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-5] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:25:57,818 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-6] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:25:57,818 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-6] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:26:07,395 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-10] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:26:07,395 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-10] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:26:07,451 c.r.P.Services.PhotoService [http-nio-8080-exec-10] Saved new photo = file, size = 19223, author = wqewq@ya.ru
+[ INFO] 2022-11-29 17:26:07,459 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-7] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:26:07,459 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-7] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:26:17,961 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-2] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:26:17,961 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-2] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =wqee. Principal = org.springframework.security.core.userdetails.User [Username=wqee, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 17:29:09,884 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 6876 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:29:09,884 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:29:18,728 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.533 seconds (JVM running for 10.977)
+[ INFO] 2022-11-29 17:31:03,705 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 3100 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:31:03,721 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:31:12,097 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.103 seconds (JVM running for 10.402)
+[ INFO] 2022-11-29 17:31:50,694 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 196 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:31:50,694 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:31:58,531 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 8.523 seconds (JVM running for 9.796)
+[ INFO] 2022-11-29 17:33:02,596 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 2092 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:33:02,596 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:33:10,487 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 8.586 seconds (JVM running for 9.925)
+[ INFO] 2022-11-29 17:35:21,941 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] Was got empty user by email=
+[ INFO] 2022-11-29 17:35:22,165 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] User com.rotar.PhotoEditorWeb.Models.UserEntity@6abb55ef was saved.
+[ INFO] 2022-11-29 17:35:22,165 c.r.P.controllers.HomeController [http-nio-8080-exec-9] User with email= was registrated
+[ INFO] 2022-11-29 17:35:34,365 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] Was got empty user by email=435435
+[ INFO] 2022-11-29 17:36:06,178 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-7] Loadind user by username...
+[ INFO] 2022-11-29 17:36:06,210 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-7] User com.rotar.PhotoEditorWeb.Models.UserEntity@62fc89d7 loaded
+[ INFO] 2022-11-29 17:36:06,330 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Finding the name of this authorized used...
+[ INFO] 2022-11-29 17:36:06,330 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =admin. Principal = org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ADMIN]]
+[ INFO] 2022-11-29 17:36:08,130 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] Getting all users...
+[ INFO] 2022-11-29 17:36:08,227 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] There are 8 users in the list
+[ INFO] 2022-11-29 17:36:12,093 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] User with ID=10 was deleted
+[ INFO] 2022-11-29 17:36:12,093 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] Getting all users...
+[ INFO] 2022-11-29 17:36:12,101 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] There are 7 users in the list
+[ INFO] 2022-11-29 17:36:12,101 c.r.P.controllers.AdminController [http-nio-8080-exec-10] User with email=wqewq@ya.ru was deleted
+[ INFO] 2022-11-29 17:36:22,459 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] User with email=wqewq@ya.ru was not deleted
+[ INFO] 2022-11-29 17:36:22,459 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] Getting all users...
+[ INFO] 2022-11-29 17:36:22,475 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] There are 7 users in the list
+[ INFO] 2022-11-29 17:36:22,475 c.r.P.controllers.AdminController [http-nio-8080-exec-2] User with email=wqewq@ya.ru was deleted
+[ INFO] 2022-11-29 17:36:31,578 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-4] User with email=wqewq@ya.ru was not deleted
+[ INFO] 2022-11-29 17:36:31,578 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-4] Getting all users...
+[ INFO] 2022-11-29 17:36:31,594 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-4] There are 7 users in the list
+[ INFO] 2022-11-29 17:36:31,594 c.r.P.controllers.AdminController [http-nio-8080-exec-4] User with email=wqewq@ya.ru was deleted
+[ INFO] 2022-11-29 17:50:36,989 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 704 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:50:36,989 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:50:45,144 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 8.856 seconds (JVM running for 10.181)
+[ INFO] 2022-11-29 17:52:30,166 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 6200 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:52:30,166 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:52:38,565 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.148 seconds (JVM running for 10.471)
+[ INFO] 2022-11-29 17:52:52,641 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] Was got empty user by email=
+[ INFO] 2022-11-29 17:52:52,857 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-2] User com.rotar.PhotoEditorWeb.Models.UserEntity@6b7a8f4a was saved.
+[ INFO] 2022-11-29 17:52:52,865 c.r.P.controllers.HomeController [http-nio-8080-exec-2] User with email= was registrated
+[ INFO] 2022-11-29 17:53:34,402 c.r.P.PhotoEditorWebApplication [restartedMain] Starting PhotoEditorWebApplication using Java 1.8.0_341 on Maryia with PID 6444 (E:\spring_projects\PhotoEditorWeb\target\classes started by Mihail in E:\spring_projects\PhotoEditorWeb)
+[ INFO] 2022-11-29 17:53:34,402 c.r.P.PhotoEditorWebApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+[ INFO] 2022-11-29 17:53:43,165 c.r.P.PhotoEditorWebApplication [restartedMain] Started PhotoEditorWebApplication in 9.481 seconds (JVM running for 10.831)
+[ INFO] 2022-11-29 18:41:02,227 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-3] Was got empty user by email=nic@ya.ru
+[ INFO] 2022-11-29 18:41:02,491 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-3] User com.rotar.PhotoEditorWeb.Models.UserEntity@354c8704 was saved.
+[ INFO] 2022-11-29 18:41:02,491 c.r.P.controllers.HomeController [http-nio-8080-exec-3] User with email=nic@ya.ru was registrated
+[ INFO] 2022-11-29 18:41:28,239 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-8] Loadind user by username...
+[ INFO] 2022-11-29 18:41:56,337 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] Loadind user by username...
+[ INFO] 2022-11-29 18:41:56,377 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] User com.rotar.PhotoEditorWeb.Models.UserEntity@6292b8b0 loaded
+[ INFO] 2022-11-29 18:41:56,505 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:41:56,513 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:16,811 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-3] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:16,811 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-3] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:21,405 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-4] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:21,405 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-4] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:32,251 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:32,251 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:32,355 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-5] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:32,355 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-5] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:42,647 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-9] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:42,647 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-9] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:42,727 c.r.P.Services.PhotoService [http-nio-8080-exec-9] Saved new photo = file, size = 119002, author = nic@ya.ru
+[ INFO] 2022-11-29 18:42:42,735 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:42,735 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:48,514 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-7] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:48,514 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-7] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:42:48,578 c.r.P.Services.PhotoService [http-nio-8080-exec-7] Saved new photo = file, size = 73579, author = nic@ya.ru
+[ INFO] 2022-11-29 18:42:48,586 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:42:48,586 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=8C9624F185E7E4648FF8454CF22C4711]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:43:24,974 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] Loadind user by username...
+[ INFO] 2022-11-29 18:43:24,982 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] User com.rotar.PhotoEditorWeb.Models.UserEntity@1bdb1777 loaded
+[ INFO] 2022-11-29 18:43:25,110 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:43:25,110 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-1] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:43:26,234 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-4] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:43:26,234 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-4] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:43:29,258 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-5] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:43:29,266 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-5] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =Nicolai Ivanov. Principal = org.springframework.security.core.userdetails.User [Username=Nicolai Ivanov, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[USER]]
+[ INFO] 2022-11-29 18:44:04,384 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-7] Loadind user by username...
+[ INFO] 2022-11-29 18:44:04,392 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-7] User com.rotar.PhotoEditorWeb.Models.UserEntity@5197b527 loaded
+[ INFO] 2022-11-29 18:44:04,504 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Finding the name of this authorized used...
+[ INFO] 2022-11-29 18:44:04,504 c.r.P.Services.SecurityServiceImpl [http-nio-8080-exec-8] Userdetails =WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=null]. Name is =admin. Principal = org.springframework.security.core.userdetails.User [Username=admin, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ADMIN]]
+[ INFO] 2022-11-29 18:44:05,871 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-5] Getting all users...
+[ INFO] 2022-11-29 18:44:05,967 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-5] There are 8 users in the list
+[ INFO] 2022-11-29 18:44:13,503 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-6] User with ID=3 was deleted
+[ INFO] 2022-11-29 18:44:13,503 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-6] Getting all users...
+[ INFO] 2022-11-29 18:44:13,519 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-6] There are 7 users in the list
+[ INFO] 2022-11-29 18:44:13,519 c.r.P.controllers.AdminController [http-nio-8080-exec-6] User with email=sidorov@ya.ru was deleted
+[ INFO] 2022-11-29 18:44:15,023 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] User with ID=4 was deleted
+[ INFO] 2022-11-29 18:44:15,031 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] Getting all users...
+[ INFO] 2022-11-29 18:44:15,039 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-9] There are 6 users in the list
+[ INFO] 2022-11-29 18:44:15,039 c.r.P.controllers.AdminController [http-nio-8080-exec-9] User with email=stefan@rambler.com was deleted
+[ INFO] 2022-11-29 18:44:17,091 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] User with ID=13 was deleted
+[ INFO] 2022-11-29 18:44:17,091 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] Getting all users...
+[ INFO] 2022-11-29 18:44:17,099 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-10] There are 5 users in the list
+[ INFO] 2022-11-29 18:44:17,099 c.r.P.controllers.AdminController [http-nio-8080-exec-10] User with email=nic@ya.ru was deleted
+[ INFO] 2022-11-29 18:44:35,310 c.r.P.Services.UserServiceImpl [http-nio-8080-exec-5] Loadind user by username...
