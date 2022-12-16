@@ -1,6 +1,7 @@
 package com.rotar.PhotoEditorWeb.Services;
 
 import com.rotar.PhotoEditorWeb.Models.Dto.UserDto;
+import com.rotar.PhotoEditorWeb.Models.PhotoAlbumEntity;
 import com.rotar.PhotoEditorWeb.Models.UserEntity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
@@ -13,7 +14,9 @@ public interface UserService extends UserDetailsService {
    Optional<UserDto> getByEmail(String email);
     boolean deleteUser(String email);
     // методы возвращения листа с фотками???
+//    void updateUser(UserEntity user);
 
+    Optional<UserEntity> getUserEntity(String name);
 
-
+    List<PhotoAlbumEntity> getPhotoAlbum(Long id);
 }

@@ -1,39 +1,41 @@
 package com.rotar.PhotoEditorWeb.Models;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="photo_album")
 public class PhotoAlbumEntity {
 
-    //ЭТО ДБ ТАБЛ many to one - много фото один юзер
-    // ЛИБО СДЕЛАТЬ ОДЕЛЬГУЮ ТАБЛ С ФОТАМИ, А ЭТА ПОСЕРЕДИНЕ ЧТОБЫ ОТ ЮЗЕРОВ ТОЖЕ ВИДНЫ БЫЛИ ФОТКИ
-
-
-
     @Getter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="photo_id")
-    private long photoId;
+    private Long id;
 
-    @Getter
-    @Setter
-    @Column(name="user_id")
-    private long userId;
+    @Column
+    private String name;
 
-    @Getter
-    @Setter
+    private Long size;
+
+    private String contentType;
+
+    private String originalFilename;
+
+    private boolean isAvatarImage;
+
     @Basic(fetch= FetchType.LAZY)
     @Lob
+    @Type(type = "org.hibernate.type.ImageType")
     @Column(name = "photo")
-    private byte photo;
+    private byte[] photo;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REFRESH)
     @JoinColumn(name = "photos")
     private UserEntity t_user;
 

@@ -2,6 +2,8 @@ package com.rotar.PhotoEditorWeb.Services;
 
 import com.rotar.PhotoEditorWeb.Models.UserEntity;
 import com.rotar.PhotoEditorWeb.Repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,6 +23,8 @@ import javax.servlet.http.HttpSession;
 @Service
 public class SecurityServiceImpl implements SecurityService {
 
+    private static final Logger logger = LoggerFactory.getLogger(SecurityServiceImpl.class);
+
     @Autowired
     private DaoAuthenticationProvider daoAuthenticationProvider;
 
@@ -32,21 +36,24 @@ public class SecurityServiceImpl implements SecurityService {
 
     @Override
     public String findLoggedInUsername() {
+        logger.info("Finding the name of this authorized used...");
+
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
 
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-
-        System.out.println("____________________---------"+ auth.getName());
+        logger.info("Userdetails ={}. Name is ={}. Principal = {}", userDetails, auth.getName(), auth.getPrincipal());
 
 /*        if (userDetails instanceof UserDetails){
             return ((UserDetails) ((UserDetails) userDetails)).getUsername();
         }*/
 
-
-
         return auth.getName();
     }
+
+
+
+
 
     @Override
     public void autoLogin(String username, String password) {

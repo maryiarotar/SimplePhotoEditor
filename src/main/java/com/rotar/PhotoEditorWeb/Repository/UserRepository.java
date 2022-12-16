@@ -1,6 +1,7 @@
 package com.rotar.PhotoEditorWeb.Repository;
 
 
+import com.rotar.PhotoEditorWeb.Models.PhotoAlbumEntity;
 import com.rotar.PhotoEditorWeb.Models.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -23,5 +24,8 @@ public interface UserRepository extends JpaRepository<UserEntity, Long> {
             " FROM UserEntity ue WHERE userName=?1")
     UserEntity findByUsername(String userName);
 
+//    @Query("update UserEntity set photos = ?2")
+//    void updateById(Long id, PhotoAlbumEntity photos);
+//
 
 }

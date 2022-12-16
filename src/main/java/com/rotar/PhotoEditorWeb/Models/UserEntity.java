@@ -64,12 +64,13 @@ public class UserEntity  implements UserDetails  {
     private String pass;
 
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "t_user")
-    private List<PhotoAlbumEntity> photos; //Сюда СКОРЕЕ ПООМЕСТИТЬ ТОЛЬКО IDшки фоток
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "t_user", cascade = CascadeType.ALL)
+    private List<PhotoAlbumEntity> photos;
+    private Long avatarId;
 
 
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.REFRESH)
     @JoinTable(name = "role", joinColumns = @JoinColumn(name="user_id"),
                 inverseJoinColumns = @JoinColumn(name="role_id"))
    private Set<Role> roles;
@@ -118,4 +119,11 @@ public class UserEntity  implements UserDetails  {
     public boolean isEnabled() {
         return isEnabled;
     }
+
+    public void addPhotoToProfile(PhotoAlbumEntity photo){
+        photo.setT_user(this);
+        photos.add(photo);
+    }
+
+
 }
