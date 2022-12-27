@@ -4,17 +4,19 @@
     <title>Welcome</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
 </head>
 <body>
-<h1>WELCOME, </h1>
-<p th:text="${signUser}" />
-<p>, HAVE A GOOD DAY!</p>
-<br><br><br>
+<div align="center">
+<h2><i >WELCOME </i></h2>
+<h1 ><i><p th:text="${signUser}" /></i></h1>
+<p> <i>HAVE A GOOD DAY! </i></p>
+
+<br><br>
 <a href="logout" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To log out</a>
 <a href="admin/show_users" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To show users</a>
 <a href="mypage" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To my page</a>
-
+</div>
 
 </body>
 </html>

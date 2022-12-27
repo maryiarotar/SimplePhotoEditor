@@ -4,6 +4,7 @@ import com.rotar.PhotoEditorWeb.Models.Dto.UserDto;
 import com.rotar.PhotoEditorWeb.Models.PhotoAlbumEntity;
 import com.rotar.PhotoEditorWeb.Models.Role;
 import com.rotar.PhotoEditorWeb.Models.UserEntity;
+import com.rotar.PhotoEditorWeb.Repository.PhotoAlbumRepository;
 import com.rotar.PhotoEditorWeb.Repository.RoleRepository;
 import com.rotar.PhotoEditorWeb.Repository.UserRepository;
 import org.slf4j.Logger;
@@ -27,6 +28,9 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     RoleRepository roleRepository;
+
+    @Autowired
+    PhotoAlbumRepository photoRepository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
@@ -131,11 +135,27 @@ public class UserServiceImpl implements UserService{
 */
 
     public List<PhotoAlbumEntity> getPhotoAlbum(Long id){
+
         Optional<UserEntity> user = userRepository.findById(id);
         List<PhotoAlbumEntity> photos;
+
         if (user.isPresent()) {
             photos = user.get().getPhotos();
-            return photos;
+            if (photos.size()!=0) {
+                Long avatarId = user.get().getAvatarId();
+                if (avatarId != null) {
+
+                    Optional<PhotoAlbumEntity> photo = photoRepository.findById(avatarId);
+
+                    if (photo.isPresent()) {
+                        photos.remove(photo.get());
+                        if (photos.size() == 0) {
+                            photos = null;
+                        }
+                    }
+                }
+                return photos;
+            }
         }
 
         return null;
@@ -153,7 +173,9 @@ public class UserServiceImpl implements UserService{
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 
         if (user == null){
-            throw new UsernameNotFoundException("User <" + name + "> not found");
+            UsernameNotFoundException ex = new UsernameNotFoundException("User <" + name + "> not found");
+            logger.error("An Exception {} was thrown in UserServiceImpl (func loadUserByUsername) ", ex);
+            throw ex;
         }
 
         user = userRepository.getReferenceById(user.getUserId());

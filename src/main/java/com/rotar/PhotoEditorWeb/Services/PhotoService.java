@@ -38,8 +38,6 @@ public class PhotoService {
             userRepository.save(user); //должно обновлять строчку с фотографиями??
             logger.info("Saved new photo = {}, size = {}, author = {}", photo.getName(), photo.getSize(), user.getEmail());
         }
-
-
     }
 
     public Long saveAvatar(UserEntity user, MultipartFile file) throws IOException {
@@ -47,11 +45,14 @@ public class PhotoService {
         Long id = null;
         if (file.getSize() != 0){
             //здесь переставить предыдуший аватар на false. в юзерэнтити обон-ся автомат-ки
-
             Long oldPhotoId = user.getAvatarId();
+
             if (oldPhotoId != null){
                 PhotoAlbumEntity oldAvatar = photoRepository.findById(oldPhotoId).orElse(null);
-                oldAvatar.setAvatarImage(false);
+                if (oldAvatar != null) {
+                    oldAvatar.setAvatarImage(false); //Устаревшее, когда фото не удалялись
+                    photoRepository.deleteById(oldPhotoId);
+                }
             }
 
             photo = toPhotoAlbumEntity(file);
@@ -101,6 +102,7 @@ public class PhotoService {
 
     public void deletePhoto(Long photoId) {
         photoRepository.deleteById(photoId);
+        logger.info("Photo with ID={} was deleted from Repository", photoId);
     }
 
 
@@ -113,10 +115,10 @@ public class PhotoService {
             photos.remove(photos.indexOf(photoId));
             user.get().setPhotos(photos);
             userRepository.save();
-            logger.info("User with ID={} was deleted", id);
+            logger.info("User with ID={}", id);
             return true;
         }
-        logger.info("User with email={} was not deleted", email);
+        logger.info("User photo with email={} was not deleted", email);
         return false;
     }*/
 

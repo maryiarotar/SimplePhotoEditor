@@ -62,12 +62,19 @@ public class PhotoController {
     }
 
     @PostMapping("delete/{photoId}")
-    public String downloadAvatar(@PathVariable("photoId") Long photoId,
+    public String deletePhoto(@PathVariable("photoId") Long photoId,
                                  Model model) throws IOException {
         photoService.deletePhoto(photoId);
 
         return "redirect:/mypage";
     }
 
+    @PostMapping("edit/{photoId}")
+    public String editPhoto(@PathVariable("photoId") Long photoId,
+                               Model model) throws IOException {
+        model.addAttribute("photoId", photoId);
+
+        return "edit";
+    }
 
 }
