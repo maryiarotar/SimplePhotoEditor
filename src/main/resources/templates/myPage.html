@@ -29,7 +29,7 @@
 
 
 
-<div class="container my-2">
+<div class="container my-2" align="center">
     <div class="card">
         <div class="card-body">
             <div class="col-md-10">
@@ -70,11 +70,11 @@
                             <img th:src="@{/album/display/{photoId}(photoId=${photo.id})}" height="200px"
                                  alt="No image" style="margin: 10px;">
                             <figcaption>
-                                <form action="#" th:action="@{/mypage/delete/{photoId}(photoId=${photo.id})}" method="post">
+                                <form action="#" th:action="@{/mypage/delete/{photoId}(photoId=${photo.id})}" method="delete">
                                 <button type="submit">Delete</button>
                                  </form>
 
-                                <form action="#" th:action="@{/mypage/edit/{photoId}(photoId=${photo.id})}" method="post">
+                                <form action="#" th:action="@{/mypage/edit/{photoId}(photoId=${photo.id})}" method="get">
                                     <button type="submit">Edit</button>
                                 </form>
                             </figcaption>

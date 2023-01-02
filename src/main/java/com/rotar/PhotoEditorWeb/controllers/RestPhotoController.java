@@ -12,10 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.*;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.io.*;
 
 
@@ -49,41 +47,24 @@ public class RestPhotoController {
             return (ResponseEntity<?>) ResponseEntity.noContent();
     }
 
-    @GetMapping("/edit/{photoId}-true")
-    public String editTempPhoto(@PathVariable("photoId") Long photoId) throws IOException {
-
-
-
-//для труе - типа фотка уже есть, здесь получаешь RGB значения, изменяешь временную фотку и
-        // и редирект editPhoto который ниже -только ему добавить фолс
-        // и в нем проверяешь если темп.жпег == текущему и прикрепляешь измененное фото уже
-//можно именовать файл одинаково - чтоб сравнивал
-        //а когда выходишь из главной страницы или сораняешь фотографию, то
-        //то временный файл удаляешь
-
-        return "redirect:/edit/"+ photoId + "-false";
-    }
 
     @GetMapping("/edit/{photoId}-false")
-    public ResponseEntity<?> editPhoto(@PathVariable("photoId") Long photoId) throws IOException {
+    public ResponseEntity editPhoto(@PathVariable("photoId") Long photoId) throws IOException {
 
         if (photoId != null) {
             PhotoAlbumEntity photo = photoService.getPhotoById(photoId).orElse(null);
             File f;
-            if (new File("./src/main/resources/temp/tmp.png").exists()) {
-                f = new File("./src/main/resources/temp/tmp.png");
+            if (new File("./src/main/resources/temp/"+photoId+".png").exists()) {
+                f = new File("./src/main/resources/temp/"+photoId+".png");
             } else {
                 f = null;
             }
 
             if (photo != null) {
 
-                System.out.println("________________________________________________" +
-                        f.hashCode() + "__________________________________________"+
-                        photo.getPhoto().hashCode() + "__________________________________________"+
-                        f.getName() + " ____ "+ photo.getName());
+                if (f != null){
 
-                if (f.length() == photo.getSize()) {
+                if (f.getName().compareTo(photoId + ".png") == 0) {
                     ByteArrayInputStream bais = new ByteArrayInputStream(FileUtils.readFileToByteArray(f));
 
                     return ResponseEntity.ok()
@@ -91,13 +72,13 @@ public class RestPhotoController {
                             .contentType(MediaType.IMAGE_JPEG)
                             .contentLength(f.length())
                             .body(new InputStreamResource(bais));
-                } else {
+                }} else {
                     InputStream imgStream = new ByteArrayInputStream(photo.getPhoto());
                     MBFImage image = ImageUtilities.readMBF(imgStream);
-                    MBFImage clone = image.clone();
+                   // MBFImage clone = image.clone();
 
-                    int h1 = image.getHeight();
-                    int w1 = image.getWidth();
+                 //   int h1 = image.getHeight();
+                 //   int w1 = image.getWidth();
 
 /*              //СЖАТИЕ ФОТОГРАФИИ алгоритм ближайшего соседа
                 int h2=h1/2, w2=w1/2;
@@ -118,18 +99,18 @@ public class RestPhotoController {
                     clone = mbf;
                 }*/
 
-                    for (int y = 0; y < h1; y++) {
-                        for (int x = 0; x < w1; x++) {
-                            clone.getBand(1).pixels[y][x] = 0;
-                            clone.getBand(2).pixels[y][x] = 0;
-                        }
-                    }
+//                    for (int y = 0; y < h1; y++) {
+//                        for (int x = 0; x < w1; x++) {
+//                            clone.getBand(1).pixels[y][x] = 0;
+//                            clone.getBand(2).pixels[y][x] = 0;
+//                        }
+//                    }
 
 
-                    File oldFile = new File("./src/main/resources/temp/tmp.png");
-                    oldFile.delete();
-                    ImageUtilities.write(clone, new File("./src/main/resources/temp/tmp.png"));
-                    File newF = new File("./src/main/resources/temp/tmp.png");
+                    //File oldFile = new File("./src/main/resources/temp/"+photoId+".png");
+                    //oldFile.delete();
+                    ImageUtilities.write(image, new File("./src/main/resources/temp/"+photoId+".png"));
+                    File newF = new File("./src/main/resources/temp/"+photoId+".png");
 
                     ByteArrayInputStream bais = new ByteArrayInputStream(FileUtils.readFileToByteArray(newF));
 
@@ -142,7 +123,7 @@ public class RestPhotoController {
                 }
             }}
 
-            return (ResponseEntity<?>) ResponseEntity.noContent();
+            return (ResponseEntity) ResponseEntity.notFound();
         }
 
 
