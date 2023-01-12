@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit a photo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+
+    <style>
+        .range-color{
+            width: 170px;
+        }
+    </style>
+
+</head>
+<body>
+<div align="center">
+<p><i>the page to edit the photo...</i></p>
+
+
+<img th:src="@{/album/display/{photoId}(photoId=${photoId})}" height="400px"
+     alt="No image" padding="30px 70px 10px 30px">
+
+
+<!-- демонстрация отредактированного фото -->
+<img th:src="@{/album/edit/{photoId}-{editMode}(photoId=${photoId}, editMode=${false})}" height="400px"
+     alt="No image" padding="30px 30px 10px 30px">
+
+    <!-- кнопки редактирования (колесико)-->
+        <table>
+            <td>
+        <form action="#" th:action="@{{photoId}-{editMode}(photoId=${photoId}, editMode=${true})}" method="get">
+        <label for="red">Red: </label><input type="range" id="red" name="red" min="0" max="1" step="0.01" th:value="${red}">
+            <input type="hidden" name="RGB" th:value="red">
+            <input type="hidden" name="green" value="0.0" th:value="${green}">
+            <input type="hidden" name="blue" value="0.0" th:value="${blue}">
+            <input type="hidden" name="dark" value="0.0" th:value="${dark}">
+            <div th:each="filling : ${T(com.rotar.PhotoEditorWeb.Models.Filling).values()}">
+                <input type="radio" id="radio1" name="radio" th:value="${filling}">
+                <label th:for="radio1" th:text="${filling}">how to fill</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+    </td>
+    <td>
+        <div>
+        <form action="#" th:action="@{{photoId}-{editMode}(photoId=${photoId}, editMode=${true})}" method="get" >
+            <label for="green">Green: </label><input type="range" id="green" name="green" min="0" max="1" step="0.01" th:value="${green}">
+            <input type="hidden" name="RGB" th:value="green">
+            <input type="hidden" name="red" value="0.0" th:value="${red}">
+            <input type="hidden" name="blue" value="0.0" th:value="${blue}">
+            <input type="hidden" name="dark" value="0.0" th:value="${dark}">
+            <div th:each="filling : ${T(com.rotar.PhotoEditorWeb.Models.Filling).values()}">
+                <input type="radio" id="radio2" name="radio" th:value="${filling}">
+                <label th:for="radio2" th:text="${filling}">how to fill</label>
+            </div>
+            <script>
+                  document.getElementById("radio1").setAttribute("FLAT","checked")
+             </script>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+        </div>
+    </td>
+    <td>
+        <div style="float: right">
+        <form action="#" th:action="@{{photoId}-{editMode}(photoId=${photoId}, editMode=${true})}" method="get">
+            <label for="blue">Blue: </label><input type="range" id="blue" name="blue" min="0" max="1" step="0.01" th:value="${blue}">
+            <input type="hidden" name="RGB" th:value="blue">
+            <input type="hidden" name="green" value="0.0" th:value="${green}">
+            <input type="hidden" name="red" value="0.0" th:value="${red}">
+            <input type="hidden" name="dark" value="0.0" th:value="${dark}">
+            <div th:each="filling : ${T(com.rotar.PhotoEditorWeb.Models.Filling).values()}">
+                <input type="radio" id="radio3" name="radio" th:value="${filling}">
+                <label th:for="radio3" th:text="${filling}">how to fill</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Submit form</button>
+        </form>
+        </div>
+    </td>
+            <td>
+                <div>
+                    <form action="#" th:action="@{{photoId}-{editMode}(photoId=${photoId}, editMode=${true})}" method="get" >
+                        <label for="dark">Dark: </label>
+                        <input type="range" id="dark" name="dark" min="-0.5" max="0.5" step="0.01" th:value="${dark}">
+                        <input type="hidden" name="RGB" th:value="darker">
+                        <input type="hidden" name="red" value="0.0" th:value="${red}">
+                        <input type="hidden" name="green" value="0.0" th:value="${green}">
+                        <input type="hidden" name="blue" value="0.0" th:value="${blue}">
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </form>
+                </div>
+            </td>
+    </table>
+<br>
+    <table>
+        <td padding="15px">
+            <a href="/mypage" class="btn btn-success"> <i class="fa fa-arrow-circle-o-left"></i>&nbsp;To my page</a>
+        </td>
+        <td padding="15px">
+             <form action="#" th:action="@{refresh/{photoId}(photoId=${photoId})}" method="post">
+                 <button class="btn btn-success" type="submit">Refresh photo</button>
+            </form>
+        </td>
+        <td padding="15px">
+            <form action="#" th:action="@{save/{photoId}(photoId=${photoId})}" method="post">
+                <button class="btn btn-success" type="submit">Save photo</button>
+            </form>
+        </td>
+    </table>
+</div>
+</body>
+</html>

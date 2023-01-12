@@ -6,6 +6,7 @@ target/
 logs/AllMyLogs.log
 logs/myErrorLogs.log
 logs/myInfoLogs.log
+src/main/java/com/rotar/PhotoEditorWeb/controllers/Example.java
 
 ### STS ###
 .apt_generated
