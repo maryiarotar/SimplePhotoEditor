@@ -70,7 +70,7 @@
                             <img th:src="@{/album/display/{photoId}(photoId=${photo.id})}" height="200px"
                                  alt="No image" style="margin: 10px;">
                             <figcaption>
-                                <form action="#" th:action="@{/mypage/delete/{photoId}(photoId=${photo.id})}" method="delete">
+                                <form action="#" th:action="@{/mypage/delete/{photoId}(photoId=${photo.id})}" method="get">
                                 <button type="submit">Delete</button>
                                  </form>
 

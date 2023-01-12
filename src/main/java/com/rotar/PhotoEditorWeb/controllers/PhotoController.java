@@ -1,15 +1,20 @@
 package com.rotar.PhotoEditorWeb.controllers;
 
 
+import com.rotar.PhotoEditorWeb.Models.Filling;
 import com.rotar.PhotoEditorWeb.Models.PhotoAlbumEntity;
 import com.rotar.PhotoEditorWeb.Models.UserEntity;
 import com.rotar.PhotoEditorWeb.Services.PhotoService;
 import com.rotar.PhotoEditorWeb.Services.SecurityService;
 import com.rotar.PhotoEditorWeb.Services.UserService;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.openimaj.image.ImageUtilities;
 import org.openimaj.image.MBFImage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
@@ -34,6 +40,7 @@ public class PhotoController {
     @Autowired
     PhotoService photoService;
 
+    private static final Logger logger = LoggerFactory.getLogger(PhotoController.class);
 
     @GetMapping
     public String myPage(Model model){
@@ -87,7 +94,7 @@ public class PhotoController {
         return "redirect:/mypage";
     }
 
-    @DeleteMapping("delete/{photoId}")
+    @GetMapping("delete/{photoId}")
     public String deletePhoto(@PathVariable("photoId") Long photoId,
                                  Model model) throws IOException {
         photoService.deletePhoto(photoId);
@@ -103,6 +110,8 @@ public class PhotoController {
         model.addAttribute("red", 0);
         model.addAttribute("green", 0);
         model.addAttribute("blue", 0);
+        model.addAttribute("dark", 0);
+        model.addAttribute("filling", "FLAT");
 
         return "edit";
     }
@@ -111,7 +120,9 @@ public class PhotoController {
     public String editTempPhoto(@ModelAttribute("red") Float r,
                                 @ModelAttribute("green") Float g,
                                 @ModelAttribute("blue") Float b,
+                                @ModelAttribute("dark") Float dark,
                                 @RequestParam("RGB") String rgb,
+                                @ModelAttribute("radio") String filling,
                                 @PathVariable("photoId") Long photoId,
                                 Model model) throws IOException {
 
@@ -121,16 +132,53 @@ public class PhotoController {
         MBFImage image = ImageUtilities.readMBF(bais);
         MBFImage clone = image.clone();
 
-        int h1 = image.getHeight();
-        int w1 = image.getWidth();
+        int h = image.getHeight();
+        int w = image.getWidth();
 
-        int bandRGB = (rgb.compareTo("red") == 0) ? 0 : ((rgb.compareTo("green") == 0) ? 1 : 2);
-        Float color = (bandRGB == 0) ? r : ((bandRGB == 1) ? g : b);
+        int bandRGB;
+        Float color = 0f;
+        if (rgb.compareTo("darker")==0){
+            bandRGB = 3;
+            clone = clone.add(dark);
+        }
+        else {
+            bandRGB = (rgb.compareTo("red") == 0) ? 0 : ((rgb.compareTo("green") == 0) ? 1 : 2);
+            color = (bandRGB == 0) ? r : ((bandRGB == 1) ? g : b);
+        }
+System.out.println("bandRgb { "+bandRGB+"} _ "+rgb+", color {" + color+ "} _ " +
+        "r="+r+", g="+g+", b="+b+", fill as "+filling);
 
-        for (int y = 0; y < h1; y++) {
-            for (int x = 0; x < w1; x++) {
-                clone.getBand(bandRGB).pixels[y][x] = color; //from 0 to 1
-                //clone.getBand(2).pixels[y][x] = color;
+
+        //САМУ ОБРАБОТКУ ПЕРЕНЕСТИ В ДР КЛАСС И ИСПРАВИТЬ НА ЗАВИСИМОСТЬ ОТ ШИРИНЫ И ВЫСОТЫ ГРАДИЕНТЫ
+        float d=0;
+        if (filling.compareTo("VERTICAL") == 0){
+
+            for (int y=0; y<(h / 2)+1; y++) {
+                for (int x = 0; x < (w / 2)+1; x++) {
+                    clone.getBand(2).pixels[y][x] = d;
+                    clone.getBand(2).pixels[y][w - x - 1] = d;
+                    clone.getBand(2).pixels[h - y - 1][x] = d;
+                    clone.getBand(2).pixels[h - y - 1][w - x - 1] = d;
+                    if (d < 1.0) {d += 0.01;}
+                }
+                d=0f;
+            }
+        }
+        else if (filling.compareTo("HORIZONTAL") == 0){
+
+            for (int y=0; y<(h / 2)+1; y++) {
+                for (int x = 0; x < (w / 2)+1; x++) {
+                    clone.getBand(2).pixels[y][x] = d;
+                    clone.getBand(2).pixels[y][w - x - 1] = d;
+                    clone.getBand(2).pixels[h - y - 1][x] = d;
+                    clone.getBand(2).pixels[h - y - 1][w - x - 1] = d;
+                }
+                if (d < 1.0) {d += 0.01;}
+            }
+        }
+        else {
+            if (rgb.compareTo("darker")!=0) {
+                clone.getBand(bandRGB).fill(color);
             }
         }
 
@@ -138,20 +186,13 @@ public class PhotoController {
         oldFile.delete();
         ImageUtilities.write(clone, new File("./src/main/resources/temp/"+photoId+".png"));
 
-//для труе - типа фотка уже есть, здесь получаешь RGB значения, изменяешь временную фотку и
-        // и редирект editPhoto который ниже -только ему добавить фолс
-        // и в нем проверяешь если темп.жпег == текущему и прикрепляешь измененное фото уже
-//можно именовать файл одинаково - чтоб сравнивал
-        //а когда выходишь из главной страницы или сораняешь фотографию, то
-        //то временный файл удаляешь
 
 
         model.addAttribute("red", r);
         model.addAttribute("green", g);
         model.addAttribute("blue", b);
-
-        String strColor = (bandRGB == 0) ? "red" : ((bandRGB == 1) ? "green" : "blue");
-        model.addAttribute(strColor, color);
+        model.addAttribute("dark", dark);
+        model.addAttribute("filling", "FLAT");
 
 
         return "edit";
@@ -162,6 +203,30 @@ public class PhotoController {
         if (new File("./src/main/resources/temp/"+photoId+".png").exists()) {
             File f = new File("./src/main/resources/temp/"+photoId+".png");
             f.delete();
+        }
+
+        return "redirect:/mypage/edit/"+photoId;
+    }
+
+    @PostMapping("edit/save/{photoId}")
+    public String saveEditedPhoto(@PathVariable("photoId") Long photoId) throws IOException {
+        if (new File("./src/main/resources/temp/"+photoId+".png").exists()) {
+            File f = new File("./src/main/resources/temp/"+photoId+".png");
+            String name = securityService.findLoggedInUsername();
+            Optional<UserEntity> user = userService.getUserEntity(name);
+            logger.info("trying to save edited photo...");
+            if (user.isPresent()) {
+
+                FileInputStream input = new FileInputStream(f);
+                MultipartFile multipartFile = new MockMultipartFile("ed-"+photoId,
+                        f.getName(), "image/jpeg", IOUtils.toByteArray(input));
+
+                photoService.savePhoto(user.get(), multipartFile);
+                logger.info("A photo {} for user {} saved SUCCESSFULLY", f.getName(), user.get().getUsername());
+            }
+            else {
+                logger.info("Some problems with saving a photo");
+            }
         }
 
         return "redirect:/mypage/edit/"+photoId;
