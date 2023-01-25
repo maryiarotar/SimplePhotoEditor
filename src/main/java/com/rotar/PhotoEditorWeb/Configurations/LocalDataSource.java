@@ -29,7 +29,7 @@ public class LocalDataSource {
         driverManagerDataSource.setUsername(USER);
         driverManagerDataSource.setPassword(PASSWORD);
         driverManagerDataSource.setDriverClassName(DRIVER);
-        // System.out.println("-----CONNECTION SUCCESSFUL!----");
+        
         return driverManagerDataSource;
     }
 }
