@@ -20,7 +20,7 @@ public class LocalDataSource {
     private final String URL = "jdbc:postgresql://localhost:5432/photoApp";
     private final String USER = "root";
     private final String DRIVER = "org.postgresql.Driver";
-    private final String PASSWORD = "mary1995";
+    private final String PASSWORD = "password";
 
     @Bean
     public DataSource getSingletonDatasource() {
@@ -29,8 +29,7 @@ public class LocalDataSource {
         driverManagerDataSource.setUsername(USER);
         driverManagerDataSource.setPassword(PASSWORD);
         driverManagerDataSource.setDriverClassName(DRIVER);
-        //driverManagerDataSource.
-        System.out.println("-----CONNECTION SUCCESSFUL!----");
+        // System.out.println("-----CONNECTION SUCCESSFUL!----");
         return driverManagerDataSource;
     }
 }
